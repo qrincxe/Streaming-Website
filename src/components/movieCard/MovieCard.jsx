@@ -15,10 +15,6 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
     const posterUrl = data.poster_path
         ? url.poster + data.poster_path
         : PosterFallback;
-
-    // Generate the "Watch Movie" URL
-    const watchUrl = `https://flicky.host/embed/movie/?id=${data.id}`;
-
     return (
         <div
             className="movieCard"
@@ -40,15 +36,6 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
                 <span className="date">
                     {dayjs(data.release_date).format("MMM D, YYYY")}
                 </span>
-                {/* Add Watch Movie Button */}
-                <a
-                    href={watchUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="watchButton"
-                >
-                    Watch Movie
-                </a>
             </div>
         </div>
     );
